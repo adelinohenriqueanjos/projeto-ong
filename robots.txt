@@ -1,0 +1,29 @@
+# ================================
+# robots.txt — Instituto Ponte do Saber
+# https://pontedosaber.org/
+# ================================
+
+# Permite rastreamento geral
+User-agent: *
+Allow: /
+
+# Bloqueia páginas internas/utilitárias
+Disallow: /obrigado.html
+Disallow: /assets/docs/
+Disallow: /*?utm_
+Disallow: /*?ref=
+
+# Bloqueia rastreadores agressivos de IA (opcional)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+# Sitemap oficial
+Sitemap: https://pontedosaber.org/sitemap.xml
+
+# Fim do arquivo

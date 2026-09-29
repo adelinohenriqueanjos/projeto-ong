@@ -1,0 +1,74 @@
+# ================================
+# .gitignore — Instituto Ponte do Saber
+# ================================
+
+# ---------- Sistema operacional ----------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ---------- Editores / IDEs ----------
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# ---------- Node / npm ----------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+
+# ---------- Build / dist ----------
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+
+# ---------- Ambiente / segredos ----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+
+# ---------- Logs ----------
+logs/
+*.log
+
+# ---------- Temporários ----------
+tmp/
+temp/
+*.tmp
+*.bak
+
+# ---------- Cobertura de testes ----------
+coverage/
+.nyc_output/
+
+# ---------- PWA ----------
+# (não ignorar o manifest nem os ícones)
+!manifest.webmanifest
+!assets/img/icon-192.png
+!assets/img/icon-512.png
+
+# ---------- PDFs gerados localmente ----------
+# (mantém os PDFs versionados, mas ignora versões de rascunho)
+assets/docs/*-rascunho.pdf
+assets/docs/*-draft.pdf
