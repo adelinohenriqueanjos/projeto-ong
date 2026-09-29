@@ -1,0 +1,8 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+    <title id="logoTitle">Logotipo Instituto Ponte do Saber</title>
+    <desc id="logoDesc">Círculo azul com ponte laranja e iniciais IPS</desc>
+    <circle cx="60" cy="60" r="58" fill="#004a99"/>
+    <path d="M20 75 Q60 35 100 75" stroke="#ff9900" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <rect x="35" y="80" width="50" height="8" rx="2" fill="#fff"/>
+    <text x="60" y="65" text-anchor="middle" font-family="Arial" font-size="22" font-weight="bold" fill="#fff">IPS</text>
+</svg>
