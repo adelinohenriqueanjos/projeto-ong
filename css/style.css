@@ -1,0 +1,378 @@
+/* ===== Reset ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+a { color: #0066cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img, svg { max-width: 100%; height: auto; }
+
+/* ===== Skip link ===== */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: #ff9900;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+}
+.skip-link:focus { left: 0; }
+
+/* ===== Cabeçalho ===== */
+.cabecalho {
+    background-color: #004a99;
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+}
+.cabecalho__logo { display: inline-block; margin-bottom: 0.5rem; }
+.cabecalho__titulo { font-size: 2rem; margin-bottom: 0.3rem; color: #fff; }
+.cabecalho__slogan { font-style: italic; margin-bottom: 1rem; color: #e0e0e0; }
+
+/* ===== Botão menu mobile ===== */
+.menu-toggle {
+    display: none;
+    background: #ff9900;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0.5rem auto;
+}
+
+/* ===== Menu ===== */
+.menu__lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.menu__lista a {
+    color: #fff;
+    font-weight: bold;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+.menu__lista a:hover {
+    background-color: #0066cc;
+    color: #fff;
+    text-decoration: none;
+}
+.menu__lista a[aria-current="page"] {
+    background-color: #ff9900;
+    color: #fff;
+}
+
+/* ===== Hero ===== */
+.hero {
+    background: linear-gradient(135deg, #0066cc, #00aaff);
+    color: #fff;
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+.hero--interna {
+    background: linear-gradient(135deg, #004a99, #0066cc);
+    padding: 2.5rem 1.5rem;
+}
+.hero h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+.hero p { max-width: 700px; margin: 0 auto 1.5rem; }
+.hero__acoes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ===== Botões ===== */
+.botao {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    text-decoration: none;
+}
+.botao:hover { transform: translateY(-2px); opacity: 0.9; text-decoration: none; }
+.botao--primario { background-color: #ff9900; color: #fff; }
+.botao--secundario { background-color: transparent; color: #fff; border: 2px solid #fff; }
+
+/* ===== Seções ===== */
+.secao {
+    padding: 3rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.secao h2 {
+    color: #004a99;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #ff9900;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+/* ===== Grid ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+/* ===== Cards ===== */
+.card {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #0066cc;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.card h3 { color: #004a99; margin-bottom: 0.5rem; }
+.card ul { padding-left: 1.2rem; }
+.card--projeto { border-left-color: #ff9900; }
+
+/* ===== Listas ===== */
+.lista-funcionamento {
+    background: #fff;
+    padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.lista-funcionamento li { margin-bottom: 0.5rem; }
+
+/* ===== Tabela ===== */
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #fff;
+}
+.tabela caption {
+    caption-side: top;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+.tabela th, .tabela td {
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    text-align: left;
+}
+.tabela th { background-color: #004a99; color: #fff; }
+.tabela tbody tr:nth-child(even) { background-color: #f1f1f1; }
+.tabela tfoot td {
+    background-color: #eaeaea;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* ===== Formulário ===== */
+.formulario fieldset {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1.5rem;
+    background-color: #fff;
+}
+.formulario legend {
+    font-weight: bold;
+    color: #004a99;
+    padding: 0 0.5rem;
+}
+.formulario label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+.formulario input,
+.formulario select,
+.formulario textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+.formulario button { margin-top: 1rem; }
+.formulario__feedback {
+    margin-top: 0.8rem;
+    font-weight: bold;
+}
+.formulario__feedback.sucesso { color: green; }
+.formulario__feedback.erro { color: red; }
+
+/* ===== Contato ===== */
+.contato-info {
+    margin-top: 1.5rem;
+    font-style: normal;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+    background-color: #004a99;
+    color: #fff;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+.rodape__redes {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.rodape a { color: #ffcc66; }
+.rodape__copy { margin-top: 1rem; font-size: 0.85rem; opacity: 0.9; }
+
+/* ===== Mobile ===== */
+@media (max-width: 600px) {
+    .cabecalho__titulo { font-size: 1.5rem; }
+    .hero h2 { font-size: 1.6rem; }
+
+    .menu-toggle { display: inline-block; }
+
+    .menu__lista {
+        display: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+    .menu__lista.aberto { display: flex; }
+}
+
+.formulario fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem 1rem;
+}
+
+.formulario label,
+.formulario input,
+.formulario select,
+.formulario textarea,
+.formulario button,
+.formulario__feedback,
+.formulario legend {
+    grid-column: span 1;
+}
+
+.formulario textarea,
+.formulario button,
+.formulario__feedback,
+.formulario legend {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 600px) {
+    .formulario fieldset {
+        grid-template-columns: 1fr;
+    }
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.formulario fieldset {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Página de agradecimento ===== */
+.hero--sucesso {
+    background: linear-gradient(135deg, #1a7f37, #2ea043);
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.hero__icone {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.hero--sucesso h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.hero--sucesso p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Botão escuro (para contraste em fundo claro) */
+.botao--escuro {
+    background-color: #004a99;
+    color: #fff;
+    border: 2px solid #004a99;
+}
+
+.botao--escuro:hover {
+    background-color: #0066cc;
+    border-color: #0066cc;
+    color: #fff;
+}
+
+
+
+/* Ajustes finos sobre o Bootstrap */
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Navbar: garante contraste do link ativo */
+.navbar .nav-link.active {
+    background-color: #ff9900;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Fieldset: leve ajuste visual */
+fieldset legend {
+    font-size: 0.95rem;
+}
+
+/* Feedback: transição suave */
+.formulario__feedback {
+    transition: color 0.3s;
+}
+
+/* Botão de pular conteúdo visível ao focar */
+.visually-hidden-focusable:focus {
+    background: #ff9900 !important;
+    color: #000 !important;
+    z-index: 1050;
+}
+

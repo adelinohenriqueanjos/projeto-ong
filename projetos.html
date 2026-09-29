@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Conheça os projetos do Instituto Ponte do Saber.">
+<meta name="theme-color" content="#004a99">
+<link rel="canonical" href="https://pontedosaber.org/projetos.html">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<title>Projetos | Instituto Ponte do Saber</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<header class="cabecalho">
+    <a href="index.html" class="cabecalho__logo" aria-label="Página inicial">
+        <svg width="80" height="80" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+            <title id="logoTitle">Logotipo Instituto Ponte do Saber</title>
+            <desc id="logoDesc">Círculo azul com ponte laranja e iniciais IPS</desc>
+            <circle cx="60" cy="60" r="58" fill="#004a99"/>
+            <path d="M20 75 Q60 35 100 75" stroke="#ff9900" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <rect x="35" y="80" width="50" height="8" rx="2" fill="#fff"/>
+            <text x="60" y="65" text-anchor="middle" font-family="Arial" font-size="22" font-weight="bold" fill="#fff">IPS</text>
+        </svg>
+    </a>
+    <h1 class="cabecalho__titulo">Instituto Ponte do Saber</h1>
+    <p class="cabecalho__slogan">Educação e inclusão digital para transformar vidas</p>
+
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu-principal">☰ Menu</button>
+
+    <nav id="menu-principal" class="menu" aria-label="Menu principal">
+        <ul class="menu__lista">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="quem-somos.html">Quem Somos</a></li>
+            <li><a href="projetos.html" aria-current="page">Projetos</a></li>
+            <li><a href="impacto.html">Impacto</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="#como-ajudar">Como Ajudar</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="conteudo">
+
+    <section class="hero hero--interna" aria-labelledby="t1">
+        <h2 id="t1">Nossos Projetos</h2>
+        <p>Quatro frentes de atuação para transformar vidas.</p>
+    </section>
+
+    <section class="secao" aria-labelledby="t2">
+        <h2 id="t2">Conheça cada projeto</h2>
+
+        <article class="card card--projeto" id="aula-viva">
+            <h3>Aula Viva</h3>
+            <p><strong>Objetivo:</strong> Reforço de português e matemática no contraturno escolar.</p>
+            <p><strong>Público:</strong> Crianças de 8 a 12 anos.</p>
+            <p><strong>Frequência:</strong> 2x por semana, 2h por aula.</p>
+            <a href="cadastro.html" class="botao botao--primario">Quero me inscrever</a>
+        </article>
+
+        <article class="card card--projeto" id="conecta-jovem">
+            <h3>Conecta Jovem</h3>
+            <p><strong>Objetivo:</strong> Cursos básicos de informática, internet segura e ferramentas digitais.</p>
+            <p><strong>Público:</strong> Adolescentes de 13 a 17 anos.</p>
+            <p><strong>Frequência:</strong> 1x por semana, 3h por aula.</p>
+            <a href="cadastro.html" class="botao botao--primario">Quero me inscrever</a>
+        </article>
+
+        <article class="card card--projeto" id="caminho-profissional">
+            <h3>Caminho Profissional</h3>
+            <p><strong>Objetivo:</strong> Oficinas de currículo, entrevista e orientação vocacional.</p>
+            <p><strong>Público:</strong> Adolescentes de 15 a 17 anos.</p>
+            <p><strong>Frequência:</strong> Mensal, com mentoria individual.</p>
+            <a href="cadastro.html" class="botao botao--primario">Quero me inscrever</a>
+        </article>
+
+        <article class="card card--projeto" id="biblioteca-comunitaria">
+            <h3>Biblioteca Comunitária</h3>
+            <p><strong>Objetivo:</strong> Empréstimo de livros e rodas de leitura.</p>
+            <p><strong>Público:</strong> Toda a comunidade.</p>
+            <p><strong>Frequência:</strong> Aberta de terça a sábado.</p>
+            <a href="cadastro.html" class="botao botao--primario">Quero me inscrever</a>
+        </article>
+    </section>
+
+    <!-- COMO AJUDAR -->
+    <section id="como-ajudar" class="secao" aria-labelledby="t-como-ajudar">
+        <h2 id="t-como-ajudar">Como Ajudar</h2>
+        <div class="grid">
+            <article class="card"><h3>Doação Financeira</h3><p>Contribua com qualquer valor.</p></article>
+            <article class="card"><h3>Doação de Materiais</h3><p>Livros, computadores e materiais escolares.</p></article>
+            <article class="card"><h3>Voluntariado</h3><p>Professor, mentor ou apoio administrativo.</p></article>
+            <article class="card"><h3>Divulgação</h3><p>Compartilhe nosso trabalho nas redes.</p></article>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="secao" aria-labelledby="t-contato">
+        <h2 id="t-contato">Fale Conosco</h2>
+        <form class="formulario" action="#" method="post">
+            <fieldset>
+                <legend>Contato</legend>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" autocomplete="name" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+
+                <label for="msg">Mensagem:</label>
+                <textarea id="msg" name="mensagem" rows="4" required></textarea>
+
+                <button type="submit" class="botao botao--primario">Enviar</button>
+                <p class="formulario__feedback" role="status" aria-live="polite"></p>
+            </fieldset>
+        </form>
+        <address class="contato-info">
+            <p>E-mail: <a href="mailto:contato@pontedosaber.org">contato@pontedosaber.org</a></p>
+            <p>Tel: (11) 99999-0000</p>
+            <p>Rua Exemplo, 123 – São Paulo/SP</p>
+        </address>
+    </section>
+
+</main>
