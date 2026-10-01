@@ -376,3 +376,507 @@ fieldset legend {
     z-index: 1050;
 }
 
+/* =========================================================
+   TOKENS DE TEMA — CLARO (padrão)
+   ========================================================= */
+:root {
+    /* Fundos */
+    --bg-pagina: #f9f9f9;
+    --bg-card: #ffffff;
+    --bg-hero-1: #0066cc;
+    --bg-hero-2: #00aaff;
+
+    /* Textos */
+    --texto-principal: #333333;
+    --texto-secundario: #666666;
+    --texto-inverso: #ffffff;
+
+    /* Bordas */
+    --borda: #cccccc;
+    --borda-suave: #e0e0e0;
+
+    /* Cores de marca */
+    --primaria: #004a99;
+    --primaria-clara: #0066cc;
+    --acao: #ff9900;
+    --acao-escura: #cc7a00;
+
+    /* Semânticas */
+    --sucesso: #1a7f37;
+    --erro: #dc3545;
+    --aviso: #ff9900;
+    --info: #0066cc;
+
+    /* Sombra */
+    --sombra: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* =========================================================
+   TOKENS DE TEMA — ESCURO
+   ========================================================= */
+[data-tema="escuro"] {
+    --bg-pagina: #121212;
+    --bg-card: #1e1e1e;
+    --bg-hero-1: #003366;
+    --bg-hero-2: #004a99;
+
+    --texto-principal: #f1f1f1;
+    --texto-secundario: #b0b0b0;
+    --texto-inverso: #ffffff;
+
+    --borda: #333333;
+    --borda-suave: #2a2a2a;
+
+    --primaria: #4d9fff;
+    --primaria-clara: #66b3ff;
+    --acao: #ffb84d;
+    --acao-escura: #ff9900;
+
+    --sucesso: #4ade80;
+    --erro: #f87171;
+    --aviso: #fbbf24;
+    --info: #60a5fa;
+
+    --sombra: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* =========================================================
+   TOKENS DE TEMA — ALTO CONTRASTE
+   ========================================================= */
+[data-tema="alto-contraste"] {
+    --bg-pagina: #000000;
+    --bg-card: #000000;
+    --bg-hero-1: #000000;
+    --bg-hero-2: #000000;
+
+    --texto-principal: #ffffff;
+    --texto-secundario: #ffff00;
+    --texto-inverso: #000000;
+
+    --borda: #ffffff;
+    --borda-suave: #ffffff;
+
+    --primaria: #ffff00;
+    --primaria-clara: #ffff00;
+    --acao: #00ffff;
+    --acao-escura: #00ffff;
+
+    --sucesso: #00ff00;
+    --erro: #ff0000;
+    --aviso: #ffff00;
+    --info: #00ffff;
+
+    --sombra: none;
+}
+
+/* Aplica alto contraste também em bordas */
+[data-tema="alto-contraste"] .card,
+[data-tema="alto-contraste"] .botao,
+[data-tema="alto-contraste"] .formulario input {
+    border-width: 2px !important;
+}
+
+/* =========================================================
+   RESET E BASE
+   ========================================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--texto-principal);
+    background-color: var(--bg-pagina);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a { color: var(--primaria-clara); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img, svg { max-width: 100%; height: auto; }
+
+/* =========================================================
+   SKIP LINK
+   ========================================================= */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--acao);
+    color: var(--texto-inverso);
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+}
+.skip-link:focus { left: 0; }
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+.cabecalho {
+    background-color: var(--primaria);
+    color: var(--texto-inverso);
+    padding: 1rem 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.cabecalho__logo { display: inline-block; margin-bottom: 0.4rem; }
+.cabecalho__titulo { font-size: 1.8rem; color: var(--texto-inverso); margin-bottom: 0.2rem; }
+.cabecalho__slogan { font-style: italic; color: var(--texto-inverso); opacity: 0.85; margin-bottom: 1rem; }
+
+/* =========================================================
+   BOTÃO DARK MODE
+   ========================================================= */
+.toggle-tema {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--acao);
+    color: var(--texto-inverso);
+    border: 2px solid transparent;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    z-index: 10;
+}
+.toggle-tema:hover {
+    transform: scale(1.1);
+    background: var(--acao-escura);
+}
+.toggle-tema:focus-visible {
+    outline: 3px solid var(--texto-inverso);
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   BOTÃO MENU MOBILE
+   ========================================================= */
+.menu-toggle {
+    display: none;
+    background: var(--acao);
+    color: var(--texto-inverso);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0.5rem auto;
+}
+
+/* =========================================================
+   MENU
+   ========================================================= */
+.menu__lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.menu__lista a {
+    color: var(--texto-inverso);
+    font-weight: bold;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+.menu__lista a:hover {
+    background-color: var(--primaria-clara);
+    text-decoration: none;
+}
+.menu__lista a[aria-current="page"] {
+    background-color: var(--acao);
+    color: var(--texto-inverso);
+}
+.menu__lista a:focus-visible {
+    outline: 3px solid var(--acao);
+    outline-offset: 2px;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+    background: linear-gradient(135deg, var(--bg-hero-1), var(--bg-hero-2));
+    color: var(--texto-inverso);
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+.hero--interna { padding: 2.5rem 1.5rem; }
+.hero--sucesso {
+    background: linear-gradient(135deg, #1a7f37, #2ea043);
+}
+.hero h1, .hero h2 { font-size: 2.2rem; margin-bottom: 1rem; color: var(--texto-inverso); }
+.hero p { max-width: 700px; margin: 0 auto 1.5rem; }
+.hero__acoes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease,
+                box-shadow 0.3s ease, opacity 0.2s ease;
+    text-decoration: none;
+}
+.botao:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0.92;
+    text-decoration: none;
+}
+.botao:focus-visible {
+    outline: 3px solid var(--primaria);
+    outline-offset: 3px;
+}
+.botao:active { transform: translateY(0); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+
+.botao--primario {
+    background-color: var(--acao);
+    color: var(--texto-inverso);
+}
+.botao--primario:hover { background-color: var(--acao-escura); }
+
+.botao--secundario {
+    background-color: transparent;
+    color: var(--texto-inverso);
+    border: 2px solid var(--texto-inverso);
+}
+.botao--secundario:hover {
+    background-color: var(--texto-inverso);
+    color: var(--primaria);
+}
+
+.botao--escuro {
+    background-color: var(--primaria);
+    color: var(--texto-inverso);
+    border: 2px solid var(--primaria);
+}
+.botao--escuro:hover { background-color: var(--primaria-clara); }
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+.secao {
+    padding: 3rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.secao h2 {
+    color: var(--primaria);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--acao);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+/* =========================================================
+   GRID E CARDS
+   ========================================================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background-color: var(--bg-card);
+    color: var(--texto-principal);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid var(--primaria-clara);
+    border-radius: 6px;
+    box-shadow: var(--sombra);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.card h3 { color: var(--primaria); margin-bottom: 0.5rem; }
+.card ul { padding-left: 1.2rem; }
+.card--projeto { border-left-color: var(--acao); }
+
+/* =========================================================
+   TABELA
+   ========================================================= */
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: var(--bg-card);
+    color: var(--texto-principal);
+}
+.tabela caption {
+    caption-side: top;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+.tabela th, .tabela td {
+    border: 1px solid var(--borda);
+    padding: 0.75rem;
+    text-align: left;
+}
+.tabela th { background-color: var(--primaria); color: var(--texto-inverso); }
+.tabela tbody tr:nth-child(even) { background-color: var(--borda-suave); }
+.tabela tfoot td {
+    background-color: var(--borda-suave);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+.formulario fieldset {
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    padding: 1.5rem;
+    background-color: var(--bg-card);
+    margin-bottom: 1.5rem;
+}
+.formulario legend {
+    font-weight: bold;
+    color: var(--primaria);
+    padding: 0 0.5rem;
+}
+.formulario label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--texto-principal);
+}
+.formulario input,
+.formulario select,
+.formulario textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--bg-card);
+    color: var(--texto-principal);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    border-color: var(--primaria-clara);
+    box-shadow: 0 0 0 3px rgba(0,102,204,0.25);
+    outline: none;
+}
+.formulario button { margin-top: 1rem; }
+.formulario__feedback { margin-top: 0.8rem; font-weight: bold; }
+.formulario__feedback.sucesso { color: var(--sucesso); }
+.formulario__feedback.erro { color: var(--erro); }
+
+/* =========================================================
+   CONTATO
+   ========================================================= */
+.contato-info {
+    margin-top: 1.5rem;
+    font-style: normal;
+    background-color: var(--bg-card);
+    color: var(--texto-principal);
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: var(--sombra);
+}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+.rodape {
+    background-color: var(--primaria);
+    color: var(--texto-inverso);
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+.rodape__redes {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.rodape a { color: var(--acao); }
+.rodape a:focus-visible {
+    outline: 3px solid var(--acao);
+    outline-offset: 2px;
+}
+.rodape__copy { margin-top: 1rem; font-size: 0.85rem; opacity: 0.9; }
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+@media (max-width: 700px) {
+    .cabecalho__titulo { font-size: 1.4rem; }
+    .hero h1, .hero h2 { font-size: 1.6rem; }
+
+    .menu-toggle { display: inline-block; }
+
+    .menu__lista {
+        display: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+    .menu__lista.aberto { display: flex; }
+
+    .toggle-tema {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+}
+
+/* =========================================================
+   PREFERÊNCIAS DO SISTEMA
+   ========================================================= */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-tema="claro"]):not([data-tema="alto-contraste"]) {
+        --bg-pagina: #121212;
+        --bg-card: #1e1e1e;
+        --texto-principal: #f1f1f1;
+        --texto-secundario: #b0b0b0;
+        --borda: #333333;
+        --borda-suave: #2a2a2a;
+        --primaria: #4d9fff;
+        --primaria-clara: #66b3ff;
+        --sombra: 0 2px 6px rgba(0,0,0,0.4);
+    }
+}
+
+@media (prefers-contrast: more) {
+    :root {
+        --texto-principal: #000000;
+        --bg-pagina: #ffffff;
+        --borda: #000000;
+    }
+}

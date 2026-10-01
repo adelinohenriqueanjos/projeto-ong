@@ -21,6 +21,18 @@
 <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
 <title>Início | Instituto Ponte do Saber</title>
 <link rel="stylesheet" href="assets/css/style.css">
+<script>
+    (function() {
+        try {
+            const salvo = localStorage.getItem('ips-tema');
+            if (salvo) {
+                document.documentElement.dataset.tema = salvo;
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.dataset.tema = 'escuro';
+            }
+        } catch (e) {}
+    })();
+</script>
 </head>
 
 
@@ -55,6 +67,14 @@
             <li><a href="#contato">Contato</a></li>
         </ul>
     </nav>
+            <button
+    id="toggle-tema"
+    class="toggle-tema"
+    type="button"
+    aria-label="Alternar tema"
+    title="Alternar tema">
+    🌙
+</button>
 </header>
 
 <main id="conteudo">
@@ -127,5 +147,7 @@
 
 <script src="assets/js/script.js"></script>
 <script src="assets/js/pwa.js"></script>
+<script src="assets/js/temas.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>

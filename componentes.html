@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Componentes — Instituto Ponte do Saber</title>
+
+<style>
+/* =========================================================
+   RESET
+   ========================================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 40px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #004a99;
+    border-bottom: 3px solid #ff9900;
+    padding-bottom: 12px;
+    margin-bottom: 32px;
+}
+
+h2 {
+    font-size: 1.25rem;
+    color: #004a99;
+    margin: 32px 0 16px;
+}
+
+h3 {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+}
+
+section {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+}
+.badge--sucesso { background: #1a7f37; color: #fff; }
+.badge--erro    { background: #dc3545; color: #fff; }
+.badge--aviso   { background: #ff9900; color: #fff; }
+.badge--info    { background: #0066cc; color: #fff; }
+.badge--neutro  { background: #e0e0e0; color: #333; }
+
+.linha-badge {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.linha-badge:last-child { border-bottom: none; }
+.linha-badge span:first-child {
+    min-width: 180px;
+    font-weight: 500;
+}
+
+/* =========================================================
+   ALERTAS
+   ========================================================= */
+.alerta {
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    border-left: 5px solid;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.alerta__icone {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+.alerta--sucesso { background: #e6f4ea; border-color: #1a7f37; color: #14532d; }
+.alerta--erro    { background: #fdecea; border-color: #dc3545; color: #7a1c1c; }
+.alerta--aviso   { background: #fff4e5; border-color: #ff9900; color: #7a4a00; }
+.alerta--info    { background: #e7f1fb; border-color: #0066cc; color: #003366; }
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+.toast-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+}
+.toast {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    font-size: 0.95rem;
+    font-weight: 500;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.toast--sucesso { background: #1a7f37; }
+.toast--erro    { background: #dc3545; }
+.toast--info    { background: #004a99; }
+
+.toast__icone { font-size: 1.2rem; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Componentes — Instituto Ponte do Saber</h1>
+
+    <!-- ===== BADGES ===== -->
+    <section>
+        <h2>1. Badges (etiquetas de categorização)</h2>
+        <h3>Uso em contexto</h3>
+
+        <div class="linha-badge">
+            <span>Projeto: Aula Viva</span>
+            <span class="badge badge--sucesso">Ativo</span>
+        </div>
+        <div class="linha-badge">
+            <span>Projeto: Conecta Jovem</span>
+            <span class="badge badge--aviso">Em breve</span>
+        </div>
+        <div class="linha-badge">
+            <span>Projeto: Biblioteca Comunitária</span>
+            <span class="badge badge--info">Novo</span>
+        </div>
+        <div class="linha-badge">
+            <span>Projeto: Caminho Profissional</span>
+            <span class="badge badge--neutro">Pausado</span>
+        </div>
+        <div class="linha-badge">
+            <span>Projeto: Reforço Escolar</span>
+            <span class="badge badge--erro">Encerrado</span>
+        </div>
+    </section>
+
+    <!-- ===== ALERTAS ===== -->
+    <section>
+        <h2>2. Caixas de alerta</h2>
+
+        <div class="alerta alerta--sucesso">
+            <span class="alerta__icone">✅</span>
+            <div>
+                <strong>Sucesso!</strong> Sua inscrição foi recebida. Entraremos em contato em até 3 dias úteis.
+            </div>
+        </div>
+
+        <div class="alerta alerta--erro">
+            <span class="alerta__icone">❌</span>
+            <div>
+                <strong>Erro!</strong> Verifique os campos destacados antes de enviar novamente.
+            </div>
+        </div>
+
+        <div class="alerta alerta--aviso">
+            <span class="alerta__icone">⚠️</span>
+            <div>
+                <strong>Atenção!</strong> As inscrições para o projeto Aula Viva encerram em 3 dias.
+            </div>
+        </div>
+
+        <div class="alerta alerta--info">
+            <span class="alerta__icone">ℹ️</span>
+            <div>
+                <strong>Informação:</strong> Novas turmas do Conecta Jovem começam em outubro.
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TOAST ===== -->
+    <section>
+        <h2>3. Toast (notificação flutuante)</h2>
+
+        <div class="toast-demo">
+            <div class="toast toast--sucesso">
+                <span class="toast__icone">✅</span>
+                <span>Inscrição enviada com sucesso!</span>
+            </div>
+
+            <div class="toast toast--erro">
+                <span class="toast__icone">❌</span>
+                <span>Não foi possível enviar. Tente novamente.</span>
+            </div>
+
+            <div class="toast toast--info">
+                <span class="toast__icone">ℹ️</span>
+                <span>Você receberá um e-mail de confirmação.</span>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
